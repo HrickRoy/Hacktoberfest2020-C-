@@ -1,0 +1,27 @@
+/******************************************************************************
+Calculation of the average weight of elephants given by user.
+*******************************************************************************/
+#include<stdio.h>
+int main()
+{
+    int n,i;
+    float num[100], sum=0.0, a;
+    printf("Enter the total no. of elephants:");      //total elements input
+    scanf("%d",&n);
+    while(n>100 || n<1)              //error detection
+    {
+        printf("Error!\n");                   
+        printf("Enter the total no. of elephants again(1-100):");    //input
+        scanf("%d",&n);
+    }
+    printf("Enter weights:\n"); 
+    for(i=0; i<n;i++)
+    {
+        printf("Elephant %d:",i+1);        //elements input(1-n)
+        scanf("%f",&num[i]);
+        sum+=num[i];
+    }
+    a=sum/n;                               //average calculation
+    printf("Average weight=%.2f",a);               //final output
+    return 0;
+}
